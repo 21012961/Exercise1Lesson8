@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdm.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Exercise 1</title>
+
+    <style>
+        body {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <center>
+        <h1 class="Title" style="font-family: 'Trebuchet MS'">About Me</h1>
+    </center>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="column" style="text-align: right;">
+            <img class="img" src="Draw.jpg" width="430" height="570">
+        </div>
+        <div class="column" style="text-align: left; padding: 50px; width: 400px">
+            <b>
+                <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Mirza Bin
+                    Irwadi</h2>
+            </b>
+
+            <h4 style="font-family: 'Trebuchet MS', sans-serif"> Born: <div class="Year"></div>
+            </h4>
+
+            <h4 style="font-family: 'Trebuchet MS', sans-serif"> Age: <div class="Age"></div>
+            </h4>
+
+            <h4 style="font-family: 'Trebuchet MS', sans-serif"> Email: <br> <a href>IzzMirza47@gmail.com</a></h4>
+            <b>
+                <br>
+                <br>
+
+                <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                    My name is Mirza, a student currently studying in Republic Polytechnic. I enjoy doing art and
+                    designing on my free time.
+                </p>
+                <button class="play">Play</button>
+                <button class="pause">Pause</button>
+            </b>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        anime({
+            targets: '.Year',
+            innerHTML: [0, 2003],
+            easing: 'linear',
+            round: 1,
+            duration: 2500
+        });
+        anime({
+            targets: '.Age',
+            innerHTML: [0, 19],
+            easing: 'linear',
+            round: 1,
+            duration: 2500
+        });
+        var animation = anime({
+            targets: '.Age',
+            translateX: 300,
+            scale: 2,
+            easing: 'easeInOutExpo',
+            direction: 'alternate',
+            duration: 2000,
+            loop: true,
+            autoplay: false
+        });
+
+
+        document.querySelector('.play').onclick = animation.play;
+        document.querySelector('.pause').onclick = animation.pause;
+        anime({
+            targets: ".Title",
+            translateX: 0,
+            translateY: 0,
+            borderRadius: 30,
+            rotate: 360,
+            opacity: [0, 1],
+            delay: 2000
+        });
+        var colorsExamples = anime.timeline({
+            endDelay: 1000,
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: true
+        })
+            .add({ targets: 'h2', background: '#FF0000' }, 0)
+
+    </script>
+
+</body>
+
+</html>
